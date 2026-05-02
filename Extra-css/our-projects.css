@@ -1,0 +1,48 @@
+.onderhoud {
+    color: white;
+    text-align: center;
+    padding-top: 250px;
+    background-color: var(--darkblue);
+}
+
+
+/*
+====================================================
+RESPONSIVE
+====================================================
+*/
+
+@media (min-width: 1920px) {
+
+
+    /* HERO — full-bleed foto, gecentreerde tekst */
+    .navbar {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .onderhoud {
+        font-size: 1.4rem;
+        padding-top: 180px;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .onderhoud {
+        font-size: 1.15rem;
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .onderhoud {
+        font-size: 1rem;
+        padding-top: 90px;
+    }
+}
