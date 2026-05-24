@@ -17,17 +17,22 @@ body {
 }
 
 
+/*BEGIN NAVBAR LINKS — één bron van waarheid, met :visited afvang */
 .over_ons,
 .onze_projecten,
-.contact {
+.contact,
+.over_ons:visited,
+.onze_projecten:visited,
+.contact:visited {
     margin-right: 35px;
     text-decoration: none;
     border: none;
     background-color: transparent;
     color: var(--beige);
     font-size: 17px;
-    font-family: Arial, sans-serif;   /* ← TOEVOEGEN */
-    font-weight: 400;                  /* ← TOEVOEGEN */
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
     cursor: pointer;
 }
 
@@ -59,8 +64,8 @@ body {
 }
 
 .Logo {
-    width: 57%;           
-    max-width: 240px;     
+    width: 57%;
+    max-width: 240px;
     height: 100%;
     margin-left: 20px;
     object-fit: contain;
@@ -74,21 +79,10 @@ body {
     display: flex;
 }
 
-.over_ons,
-.onze_projecten,
-.contact {
-    margin-right: 35px;
-    text-decoration: none;
-    border: none;
-    background-color: transparent;
-    color: var(--beige);
-    font-size: 17px;
-    cursor: pointer;
-}
-
 
 /* ========================================
    HAMBURGER — basis (verborgen op desktop)
+   Werkt voor zowel <div> als <button> dankzij de reset
    ======================================== */
 .hamburger {
     display: none;
@@ -103,6 +97,24 @@ body {
     margin-left: auto;
     transition: opacity 0.3s ease;
     z-index: 60;
+
+    /* === Button-reset: zorgt dat <button> identiek rendert aan <div> === */
+    background: transparent;
+    border: 0;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+.hamburger:focus-visible {
+    outline: 1px solid var(--beige);
+    outline-offset: 2px;
 }
 
 .hamburger:hover {
