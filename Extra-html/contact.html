@@ -1,52 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
-    <link href="../main.css" rel="stylesheet">
+    <title>Contact — Meubel & Bouw Design</title>
+    <meta name="description"
+          content="Neem contact op met Meubel & Bouw Design voor maatwerk meubels, bouwprojecten en renovaties. Couperusstraat 2, Vleuten.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080823">
+
     <link href="../Extra-css/contact.css" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&display=swap"
           rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
-    <script src="../Javascript/website.js" defer></script>
+    <script src="../Javascript/contact.js" defer></script>
+    <script src="../Javascript/main.js" defer></script>
 
-    <!-- FAVICON -->
-<link rel="icon" type="image/x-icon" href="../Images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../Images/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../Images/favicon/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../Images/favicon/apple-touch-icon.png">
-
+    <link rel="icon" type="image/x-icon" href="../Images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Images/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" href="../Extra-css/main.css">
 </head>
 <body>
 
-<!-- DIV VOOR DE NAVIGATION BAR -->
-<div class="navbar">
+<!--PAGE LOADER-->
+<div class="page-loader" id="pageLoader">
+    <img src="../Images/mbd_logo_transparent.png" alt="MBD" class="loader-logo">
+</div>
+
+<a class="skip-link" href="#main">Sla navigatie over</a>
+
+<!-- ============================================ -->
+<!-- NAVIGATION                                   -->
+<!-- ============================================ -->
+<header class="navbar" role="banner">
     <div class="left-navbar">
-        <a href="../index.html" class="homepage-click">
-            <img class="Logo" src="../Images/mbd_logo_transparent.png">
+        <a href="../index.html" class="homepage-click" aria-label="Naar de homepagina">
+            <img class="Logo" src="../Images/mbd_logo_transparent.png" alt="Meubel & Bouw Design logo">
         </a>
     </div>
 
-    <!-- HAMBURGER BUTTON -->
-    <div class="hamburger">
+    <button class="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="primary-nav">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </button>
 
-    <div class="right-navbar">
+    <nav class="right-navbar" id="primary-nav" aria-label="Hoofdnavigatie">
         <a href="../Extra-html/about-us.html" class="over_ons">Over ons</a>
         <a href="../Extra-html/our-projects.html" class="onze_projecten">Onze Projecten</a>
-        <a href="../Extra-html/contact.html" class="contact">Contact</a>
-    </div>
-</div>
-<!-- EINDE DIV NAVIGATION BAR -->
+        <a href="../Extra-html/contact.html" class="contact" aria-current="page">Contact</a>
+    </nav>
+</header>
 
-<h2 class="onderhoud">Deze pagina is in onderhoud en komt binnenkort online!</h2>
+<main id="main">
 
+    <!-- ============================================ -->
+    <!-- HERO                                         -->
+    <!-- ============================================ -->
+    <section class="contact-hero" aria-labelledby="hero-title">
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-watermark" aria-hidden="true">contact</div>
+
+        <div class="hero-inner">
+            <div class="hero-meta">
+                <span class="hero-line" aria-hidden="true"></span>
+                <span class="hero-eyebrow">Contact</span>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 id="hero-title" class="hero-title">
+                        Laten we
+                        <span class="hero-em">kennis<br>maken</span>
+                    </h1>
+
+                    <p class="hero-intro">
+                        Of u nu een specifiek meubel voor ogen heeft, een bouwproject
+                        of een vrijblijvend gesprek wilt &mdash; wij horen graag van u.
+                    </p>
+
+                    <div class="hero-cta-row">
+                        <a class="btn btn-solid" href="#aanvraag">
+                            <span>Stuur een bericht</span>
+                            <span class="btn-arrow" aria-hidden="true">↓</span>
+                        </a>
+                        <a class="btn btn-ghost" href="tel:+310624689367">
+                            <span class="btn-ghost-label">Bel direct</span>
+                            <span class="btn-ghost-number">+31 (0)6 24 68 93 67</span>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="hero-visual" aria-label="Sfeerbeeld werkplaats">
+                    <figure class="hero-frame">
+                        <img src="../Images/me.png"
+                             alt="Ruben van der Bildt, oprichter van Meubel & Bouw Design"
+                             loading="lazy">
+                    </figure>
+
+                    <figcaption class="hero-note">
+                        <span class="hero-note-label">— Meubel &amp; Bouw Design</span>
+                        <p>~ Ruben van der Bildt (Oprichter/Eigenaar)</p>
+                    </figcaption>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FORM + INFO                                  -->
+    <!-- ============================================ -->
+    <section class="contact-panel" id="contact-panel" aria-labelledby="contact-title">
+        <div class="contact-grid">
+
+            <div class="contact-form-wrap">
+                <header class="panel-heading" id="aanvraag">
+                    <span class="overline">Aanvraag</span>
+                    <h2 id="contact-title" class="panel-title">
+                        Vertel ons over uw <span class="em">project</span>
+                    </h2>
+                </header>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="508298f5-fe8f-4ac1-bf9e-90101a818f2f">
+
+                    <input type="hidden" name="from_name" value="Meubel & Bouw Design - Contactformulier">
+                    <input type="hidden" name="subject" value="Nieuw bericht via Meubel & Bouw Design">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="naam">Naam</label>
+                            <input type="text" id="naam" name="naam" required placeholder="Uw volledige naam"
+                                   autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mailadres</label>
+                            <input type="email" id="email" name="email" required placeholder="naam@voorbeeld.nl"
+                                   autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefoon">Telefoon <span class="optional">(optioneel)</span></label>
+                            <input type="tel" id="telefoon" name="telefoon" placeholder="06 — 12 34 56 78"
+                                   autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="onderwerp">Onderwerp</label>
+                            <select id="onderwerp" name="onderwerp" required>
+                                <option value="" disabled selected>Maak een keuze</option>
+                                <option value="Maatwerk meubels">Maatwerk meubels</option>
+                                <option value="Bouwproject / Renovatie">Bouwproject / Renovatie</option>
+                                <option value="Verduurzaming">Verduurzaming</option>
+                                <option value="Algemene vraag">Algemene vraag</option>
+                                <option value="Anders">Anders</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bericht">Vertel ons over uw project</label>
+                        <textarea id="bericht" name="bericht" rows="6" required
+                                  placeholder="Beschrijf uw idee, ruimte, wensen en indicatief budget."></textarea>
+                    </div>
+
+                    <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+                    <div class="captcha-wrap">
+                        <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+                    </div>
+
+                    <p class="captcha-error" id="captchaError" hidden>
+                        Bevestig eerst dat u ee mens bent.
+                    </p>
+
+                    <button type="submit" class="form-submit">
+                        <span class="submit-text">Verstuur bericht</span>
+                        <span class="submit-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <p class="form-disclaimer">
+                        Door te verzenden gaat u ermee akkoord dat wij uw gegevens gebruiken
+                        om contact met u op te nemen over uw aanvraag.
+                    </p>
+                </form>
+            </div>
+
+            <aside class="contact-info" aria-label="Contactgegevens">
+                <header class="info-kop">
+                    <span class="overline">Direct contact</span>
+                    <h2 class="panel-title">
+                        Bereik ons <span class="em">persoonlijk</span>
+                    </h2>
+                </header>
+
+                <div class="info-list">
+                    <div class="info-block">
+                        <span class="info-label">Adres</span>
+                        <p class="info-text">
+                            Couperusstraat 2<br>
+                            3451 AW Vleuten<br>
+                            Nederland
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="info-label">Telefoon</span>
+                        <p class="info-text">
+                            <a href="tel:+310624689367" class="info-link">+31 (0)6 24 68 93 67</a>
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="info-label">E-mail</span>
+                        <p class="info-text">
+                            <a href="mailto:info@mebdesigner.nl" class="info-link">info@mebdesigner.nl</a>
+                        </p>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="info-label">Openingstijden</span>
+                        <ul class="hours">
+                            <li><span>Ma &mdash; Vr</span><span>07:00 — 17:00</span></li>
+                            <li><span>Zaterdag</span><span>Gesloten</span></li>
+                            <li><span>Zondag</span><span>Gesloten</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MAP                                          -->
+    <!-- ============================================ -->
+    <section class="map-section" aria-labelledby="map-title">
+        <div class="map-card">
+            <div class="map-copy">
+                <h2 id="map-title" class="map-title">
+                    Kom langs bij <span class="em">ons</span>
+                </h2>
+                <p class="map-text">
+                    Wilt u langskomen voor een adviesgesprek? Graag wel op afspraak, zodat we de tijd voor u hebben.
+                </p>
+                <a class="map-link" href="https://maps.google.com/maps?q=Couperusstraat+2,+3451+AW+Vleuten,+Nederland"
+                   target="_blank" rel="noopener">
+                    <span>Open in Google Maps</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                        src="https://maps.google.com/maps?q=Couperusstraat+2,+3451+AW+Vleuten,+Nederland&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Locatie Meubel & Bouw Design op Google Maps">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<footer>
+    <p>&copy; 2026 <span>Meubel &amp; Bouw Design</span>. Alle rechten voorbehouden.</p>
+    <p>Ontworpen door <a href="https://www.avdbsecurity.com/index-nl.html" class="avdb-link">AvdB Security &amp;
+        Protection</a></p>
+</footer>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
