@@ -17,6 +17,21 @@ body {
 }
 
 
+.over_ons,
+.onze_projecten,
+.contact {
+    margin-right: 35px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: var(--beige);
+    font-size: 17px;
+    font-family: Arial, sans-serif;   /* ← TOEVOEGEN */
+    font-weight: 400;                  /* ← TOEVOEGEN */
+    cursor: pointer;
+}
+
+
 /*BUTTON STYLING*/
 .over_ons:hover,
 .onze_projecten:hover,
