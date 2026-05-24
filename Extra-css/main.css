@@ -44,9 +44,11 @@ body {
 }
 
 .Logo {
-    width: 55%;
+    width: 57%;           
+    max-width: 240px;     
     height: 100%;
     margin-left: 20px;
+    object-fit: contain;
 }
 
 .right-navbar {
