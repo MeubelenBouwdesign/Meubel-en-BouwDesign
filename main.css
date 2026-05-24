@@ -334,3 +334,49 @@ RESPONSIVE — KLEINE TELEFOON (≤ 480px)
         padding: 18px 20px;
     }
 }
+
+/*PAGE LOADER*/
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #07091a;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page-loader.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader-logo {
+  width: min(250px, 70vw);
+  height: auto;
+  animation: logoPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+}
