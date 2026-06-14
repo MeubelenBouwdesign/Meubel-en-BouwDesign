@@ -1,0 +1,1380 @@
+/* =========================================
+   OUR PROJECTS — verfijnd & luxe
+   Vloeiend responsief: kern-elementen schalen
+   mee via clamp(); breakpoints alleen voor de
+   echte layout-omslagpunten.
+   ========================================= */
+
+/* ---------- Page-tittel ---------- */
+
+.project-title {
+    color: var(--offwhite);
+    text-align: center;
+    margin-top: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(40px, 7vw, 80px);
+    font-family: 'Playfair Display', serif;
+    animation: fadeUpIn 0.9s ease both;
+}
+
+.project-title h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    margin: 0 0 18px;
+}
+
+.project-title h1::after {
+    content: "";
+    display: block;
+    width: clamp(110px, 14vw, 160px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--beige), transparent);
+    margin: 16px auto 0;
+}
+
+/* ---------- Grid projecten ---------- */
+
+.projecten {
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    gap: 8px;
+    height: clamp(360px, 38vw, 450px);
+    overflow: hidden;
+    margin-bottom: 30px;
+    animation: fadeUpIn 1s 0.2s ease both;
+}
+
+.links,
+.rechts {
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- Projectfoto's ---------- */
+
+.project-picture,
+.project-picture2 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-jpg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+        1% 91%,
+        1.3% 93%,
+        2% 95%,
+        3.2% 97%,
+        4.5% 98.7%,
+        6% 100%,
+        100% 100%,
+        100% 0%,
+        55% 0%,
+        54% 0.3%,
+        53.1% 0.9%,
+        52.4% 1.8%,
+        51.8% 3%,
+        51.4% 4.3%,
+        51.1% 5.3%,
+        51% 6%,
+        51% 21%,
+        51% 35%,
+        50.95% 38%,
+        50.8% 41%,
+        50.55% 43.5%,
+        50.2% 45.4%,
+        49.8% 46.8%,
+        49.2% 48.1%,
+        48.5% 49.1%,
+        47.6% 49.9%,
+        46.4% 50.5%,
+        45% 50.9%,
+        42% 51.2%,
+        37% 51.5%,
+        31% 51.7%,
+        24% 52%,
+        1% 52%
+    );
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---------- Tekst-blokken ---------- */
+/* breedte schaalt mee zodat lange titels nooit uit het vak lopen */
+
+.project-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(calc(51% - 12px), 50% + 1vw, calc(56% - 12px));
+    height: calc(52% - 12px);
+    padding: clamp(14px, 2.4vw, 28px) clamp(14px, 2.6vw, 32px);
+    box-sizing: border-box;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.project-text::before,
+.project-text2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.38) 0%, transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.project-text > *,
+.project-text2 > * {
+    position: relative;
+    z-index: 1;
+}
+
+.project-label {
+    display: block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.54rem, 1vw, 0.62rem);
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--beige);
+    margin-bottom: 4px;
+    opacity: 0.85;
+    transition:
+        opacity 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+/* pijltje in het label beweegt mee op hover -> leest als 'klikbaar' */
+.project-label .label-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.project-text h2 {
+    margin: 0 0 6px 0;
+    color: var(--offwhite);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.4vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: 0.04em;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.project-text h2::after,
+.project-text2 h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--beige, #c9a96e);
+    margin: 10px auto 0;
+    opacity: 0.7;
+}
+
+.project-text p,
+.project-text2 p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.58rem, 1.2vw, 0.78rem);
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.02em;
+    max-width: 96%;
+}
+
+/* ---------- Tweede project (rechts) ---------- */
+
+.project-jpg2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+        99% 91%,
+        98.7% 93%,
+        98% 95%,
+        96.8% 97%,
+        95.5% 98.7%,
+        94% 100%,
+        0% 100%,
+        0% 0%,
+        45% 0%,
+        46% 0.3%,
+        46.9% 0.9%,
+        47.6% 1.8%,
+        48.2% 3%,
+        48.6% 4.3%,
+        48.9% 5.3%,
+        49% 6%,
+        49% 21%,
+        49% 35%,
+        49.05% 38%,
+        49.2% 41%,
+        49.45% 43.5%,
+        49.8% 45.4%,
+        50.2% 46.8%,
+        50.8% 48.1%,
+        51.5% 49.1%,
+        52.4% 49.9%,
+        53.6% 50.5%,
+        55% 50.9%,
+        58% 51.2%,
+        63% 51.5%,
+        69% 51.7%,
+        76% 52%,
+        99% 52%
+    );
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-text2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(calc(51% - 12px), 50% + 1vw, calc(56% - 12px));
+    height: calc(52% - 12px);
+    padding: clamp(14px, 2.4vw, 28px) clamp(14px, 2.6vw, 32px);
+    box-sizing: border-box;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.project-text2 h2 {
+    margin: 0 0 6px 0;
+    color: var(--offwhite);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.4vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: 0.04em;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* ---------- Sierlijk tussenstuk ---------- */
+
+.section-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: clamp(40px, 5vw, 52px) auto 0;
+    width: fit-content;
+}
+
+.section-ornament::before,
+.section-ornament::after {
+    content: "";
+    display: block;
+    width: clamp(56px, 8vw, 80px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--beige, #c9a96e));
+    opacity: 0.55;
+}
+
+.section-ornament::after {
+    background: linear-gradient(90deg, var(--beige, #c9a96e), transparent);
+}
+
+.ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--beige, #c9a96e);
+    transform: rotate(45deg);
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+/* ---------- Uitgelicht sectie ---------- */
+
+.uitgelicht-title {
+    margin-top: 20px;
+    margin-bottom: clamp(28px, 4vw, 40px);
+    text-align: center;
+}
+
+.uitgelicht-title h2 {
+    margin: 0;
+    color: var(--offwhite);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+}
+
+.uitgelicht-title h2::after {
+    content: "";
+    display: block;
+    width: clamp(170px, 22vw, 230px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--beige), transparent);
+    margin: 18px auto 0;
+}
+
+.uitgelicht-title .uitgelicht-subtitle {
+    display: block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.73rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--beige, #c9a96e);
+    opacity: 0.85;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.uitgelicht {
+    grid-template-columns: 1fr 20px 1fr;
+    height: clamp(300px, 32vw, 380px);
+    display: grid;
+    gap: 8px;
+    animation: fadeUpIn 1s 0.15s ease both;
+    margin-bottom: 0;
+}
+
+.uitgelicht-left,
+.uitgelicht-right {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.uitgelicht-left::after,
+.uitgelicht-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 42%, rgba(0,0,0,0.32) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.uitgelicht-img1,
+.uitgelicht-img2 {
+    width: 89.5%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(
+        8% 0,
+        92% 0,
+        92% 50%,
+        75% 100%,
+        25% 100%,
+        8% 49%
+    );
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.text1-uitgelicht,
+.text2-uitgelicht {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--offwhite);
+    z-index: 2;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+    font-style: italic;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+    white-space: nowrap;
+}
+
+.text1-uitgelicht::before,
+.text2-uitgelicht::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--beige, #c9a96e);
+    margin: 0 auto 8px;
+    opacity: 0.75;
+}
+
+/* ---------- Klik-hint uitgelichte tegels: jouw eigen label ---------- */
+/* project-label2 = de hint-tekst die JIJ in de uitgelichte tegels zet. */
+
+.project-label2 {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.54rem, 1vw, 0.6rem);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--offwhite);
+    opacity: 0.9;
+    transition:
+        opacity 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.uitgelicht-left:hover .project-label2,
+.uitgelicht-right:hover .project-label2 {
+    opacity: 1;
+    letter-spacing: 0.28em;
+}
+
+/* ---------- Hover / zoom ---------- */
+
+.links:hover .project-jpg,
+.rechts:hover .project-jpg2,
+.uitgelicht-left:hover .uitgelicht-img1,
+.uitgelicht-right:hover .uitgelicht-img2 {
+    transform: scale(1.04);
+}
+
+.links:hover .project-text h2,
+.rechts:hover .project-text2 h2 {
+    letter-spacing: 0.06em;
+    transition: letter-spacing 0.4s ease;
+}
+
+/* label reageert mee op hover */
+.links:hover .project-label,
+.rechts:hover .project-label {
+    opacity: 1;
+    letter-spacing: 0.32em;
+}
+
+.links:hover .project-label .label-arrow,
+.rechts:hover .project-label .label-arrow {
+    transform: translateX(4px);
+}
+
+/* ---------- CTA sectie: geïntegreerd met projectpagina ---------- */
+
+.cta-sectie {
+    position: relative;
+    margin: clamp(50px, 8vw, 88px) auto clamp(70px, 11vw, 120px);
+    max-width: 1040px;
+    padding: 0 clamp(16px, 3vw, 32px);
+    text-align: center;
+    animation: fadeUpIn 1s 0.3s ease both;
+}
+
+.cta-sectie::before {
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: 920px;
+    height: 1px;
+    margin: 0 auto clamp(32px, 5vw, 42px);
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 169, 110, 0.18) 18%,
+        rgba(201, 169, 110, 0.62) 50%,
+        rgba(201, 169, 110, 0.18) 82%,
+        transparent 100%
+    );
+}
+
+.cta-sectie::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    background: var(--beige, #c9a96e);
+    transform: translateX(-50%) rotate(45deg);
+    opacity: 0.68;
+}
+
+.cta-ornament {
+    display: none;
+}
+
+.cta-label {
+    display: block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--beige, #c9a96e);
+    opacity: 0.78;
+    margin-bottom: 14px;
+}
+
+.cta-sectie h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.45rem);
+    font-weight: 400;
+    color: var(--offwhite);
+    letter-spacing: 0.105em;
+    margin: 0 0 22px;
+    line-height: 1.35;
+}
+
+.cta-sectie h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 1px;
+    background: var(--beige, #c9a96e);
+    margin: 22px auto 0;
+    opacity: 0.48;
+}
+
+.cta-sectie p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.78rem, 1.4vw, 0.85rem);
+    color: rgba(255, 255, 255, 0.64);
+    line-height: 1.9;
+    letter-spacing: 0.035em;
+    max-width: 620px;
+    margin: 0 auto clamp(30px, 5vw, 42px);
+}
+
+.cta-knoppen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.cta-btn-primary,
+.cta-btn-secondary {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 190px;
+    padding: 15px 34px;
+
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border-top: 1px solid rgba(201, 169, 110, 0.46);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.46);
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        letter-spacing 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* linker knop - volledige rand rondom (rechterrand hersteld) */
+.cta-btn-primary {
+    color: #0e0d0b;
+    background: var(--beige, #c9a96e);
+    border-left: 1px solid rgba(201, 169, 110, 0.62);
+    border-right: 1px solid rgba(201, 169, 110, 0.62);
+}
+
+.cta-btn-primary:hover {
+    background: transparent;
+    color: var(--beige);
+    letter-spacing: 0.3em;
+}
+
+.cta-knoppen::before,
+.cta-knoppen::after {
+    content: "";
+    display: block;
+    width: clamp(48px, 7vw, 72px);
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 169, 110, 0.5)
+    );
+}
+
+.cta-knoppen::after {
+    background: linear-gradient(
+        90deg,
+        rgba(201, 169, 110, 0.5),
+        transparent
+    );
+}
+
+/* ---------- Entrance animatie ---------- */
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projecten {
+    animation: fadeUpIn 1s 0.1s ease both;
+}
+
+.uitgelicht {
+    animation: fadeUpIn 1s 0.2s ease both;
+}
+
+
+/* =========================================================
+   PROJECT TRIGGERS (klikbare tegels)
+   ========================================================= */
+
+.project-trigger {
+    cursor: pointer;
+    outline: none;
+}
+
+.project-trigger:focus-visible {
+    outline: 1px solid var(--beige, #c9a96e);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   OVERLAY (categorie) & DETAIL MODAL (project)
+   ========================================================= */
+
+.project-overlay,
+.project-detail {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(8, 7, 6, 0.94);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(70px, 9vw, 84px) clamp(14px, 2.5vw, 24px) clamp(80px, 11vw, 100px);
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.project-overlay.is-open,
+.project-detail.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.overlay-content,
+.detail-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.65s ease 0.1s,
+        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+}
+
+.project-overlay.is-open .overlay-content,
+.project-detail.is-open .detail-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Sluitknop ---------- */
+
+.overlay-close {
+    position: fixed;
+    top: clamp(14px, 2vw, 26px);
+    right: clamp(14px, 2vw, 28px);
+    width: clamp(40px, 5vw, 44px);
+    height: clamp(40px, 5vw, 44px);
+    padding: 0;
+    background: rgba(8, 7, 6, 0.5);
+    border: 1px solid rgba(201, 169, 110, 0.42);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1010;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.4s ease;
+}
+
+.overlay-close:hover {
+    background: rgba(201, 169, 110, 0.14);
+    border-color: var(--beige, #c9a96e);
+    transform: rotate(90deg);
+}
+
+.overlay-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 1px;
+    background: var(--beige, #c9a96e);
+}
+
+.overlay-close span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.overlay-close span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.detail-close {
+    z-index: 1020;
+}
+
+/* ---------- Titel binnen overlay / detail ---------- */
+
+.overlay-title,
+.detail-title {
+    text-align: center;
+    margin-bottom: clamp(38px, 6vw, 56px);
+}
+
+.overlay-subtitle,
+.detail-subtitle {
+    display: block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.73rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--beige, #c9a96e);
+    opacity: 0.85;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.overlay-title h2,
+.detail-title h2 {
+    margin: 0;
+    color: var(--offwhite);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+}
+
+.overlay-title h2::after,
+.detail-title h2::after {
+    content: "";
+    display: block;
+    width: clamp(160px, 20vw, 200px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--beige), transparent);
+    margin: 20px auto 0;
+}
+
+
+/* =========================================================
+   PROJECT GRID (categorie-overzicht)
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+    gap: clamp(20px, 3vw, 36px);
+    padding: 0 8px;
+}
+
+.project-card {
+    position: relative;
+    background: rgba(20, 18, 15, 0.55);
+    border: 1px solid rgba(201, 169, 110, 0.16);
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeUpIn 0.7s ease forwards;
+    transition:
+        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201, 169, 110, 0.45);
+    background: rgba(28, 25, 21, 0.7);
+}
+
+.project-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.project-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.45) 100%);
+    pointer-events: none;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card-image img {
+    transform: scale(1.06);
+}
+
+.project-card-body {
+    padding: clamp(20px, 3vw, 26px) clamp(20px, 3vw, 28px) clamp(24px, 3.5vw, 30px);
+    text-align: center;
+}
+
+.project-card-label {
+    display: block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--beige, #c9a96e);
+    opacity: 0.78;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    margin: 0 0 14px;
+    color: var(--offwhite);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.3rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+}
+
+.project-card h3::after {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 1px;
+    background: var(--beige, #c9a96e);
+    margin: 12px auto 0;
+    opacity: 0.55;
+}
+
+.project-card-cta {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.project-card:hover .project-card-cta {
+    color: var(--beige, #c9a96e);
+    letter-spacing: 0.32em;
+}
+
+
+/* =========================================================
+   CAROUSEL (detail modal)
+   ========================================================= */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto clamp(36px, 5vw, 48px);
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    touch-action: pan-y;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 10;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(36px, 5vw, 52px);
+    height: clamp(36px, 5vw, 52px);
+    padding: 0;
+    background: rgba(8, 7, 6, 0.55);
+    border: 1px solid rgba(201, 169, 110, 0.38);
+    color: var(--beige, #c9a96e);
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(201, 169, 110, 0.18);
+    border-color: var(--beige, #c9a96e);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.carousel-arrow svg {
+    width: clamp(16px, 2.4vw, 22px);
+    height: clamp(16px, 2.4vw, 22px);
+}
+
+.carousel-prev { left: clamp(8px, 1.5vw, 18px); }
+.carousel-next { right: clamp(8px, 1.5vw, 18px); }
+
+.carousel-counter {
+    position: absolute;
+    bottom: clamp(12px, 2vw, 18px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 16px;
+    background: rgba(8, 7, 6, 0.62);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    color: var(--offwhite);
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.6rem, 1.1vw, 0.66rem);
+    letter-spacing: 0.24em;
+    z-index: 5;
+}
+
+/* ---------- Detail beschrijving ---------- */
+
+.detail-info {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.detail-info p {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(0.82rem, 1.5vw, 0.92rem);
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.95;
+    letter-spacing: 0.025em;
+}
+
+
+/* =========================================================
+   ============================================================
+                       RESPONSIVE
+   ============================================================
+   Veel layout schaalt al vloeiend via clamp() hierboven.
+   De breakpoints hieronder regelen alleen de echte
+   layout-omslagpunten (kolommen -> stack).
+
+   Breakpoints:
+       Smal landscape / kleine laptop : <= 900px
+       Telefoon (stack)               : <= 768px
+       Kleine telefoon                : <= 480px
+       Zeer smal                      : <= 360px
+   ============================================================
+   ========================================================= */
+
+
+/* =========================================================
+   SMAL LANDSCAPE / KLEINE LAPTOP (<= 900px)
+   Nog 2-koloms, maar tekstvak krijgt iets meer lucht en de
+   titel krimpt nog wat verder. Voorkomt overlopen vlak
+   voordat we naar gestapelde layout gaan.
+   ========================================================= */
+@media (max-width: 900px) {
+
+    .project-text,
+    .project-text2 {
+        width: calc(57% - 10px);
+    }
+
+    .project-text h2,
+    .project-text2 h2 {
+        font-size: clamp(0.95rem, 2.6vw, 1.3rem);
+    }
+}
+
+
+/* =========================================================
+   TELEFOON (<= 768px)
+   Tegels stapelen verticaal, clip-path blijft.
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* ---------- Hoofdtegels: stack onder elkaar ---------- */
+
+    .projecten {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(22px, 5vw, 28px);
+        height: auto;
+        overflow: visible;
+        padding: 0 clamp(14px, 4vw, 18px);
+        margin-bottom: 24px;
+    }
+
+    .gap {
+        display: none;
+    }
+
+    .links,
+    .rechts {
+        position: relative;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 5 / 6;
+        overflow: hidden;
+        transition: transform 0.4s ease;
+    }
+
+    .links:active,
+    .rechts:active {
+        transform: scale(0.99);
+    }
+
+    .project-picture,
+    .project-picture2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* tekstvak terug naar smallere breedte; op mobiel is er
+       genoeg verticale ruimte en de clip-path-vorm vraagt erom */
+    .project-text,
+    .project-text2 {
+        width: calc(52% - 10px);
+        padding: clamp(12px, 4vw, 18px) clamp(10px, 3.5vw, 14px);
+        gap: 4px;
+    }
+
+    .project-text h2,
+    .project-text2 h2 {
+        font-size: clamp(1rem, 5vw, 1.3rem);
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        margin-bottom: 2px;
+    }
+
+    .project-text h2::after,
+    .project-text2 h2::after {
+        width: 32px;
+        margin: 8px auto 4px;
+    }
+
+    .project-text p,
+    .project-text2 p {
+        font-size: clamp(0.56rem, 2.6vw, 0.66rem);
+        line-height: 1.55;
+        letter-spacing: 0.01em;
+        max-width: 100%;
+    }
+
+    .project-label {
+        font-size: clamp(0.52rem, 2.4vw, 0.6rem);
+        letter-spacing: 0.22em;
+        margin-bottom: 2px;
+        opacity: 1;
+    }
+
+    .project-label2 {
+        opacity: 1;
+    }
+
+
+    /* ---------- Uitgelichte projecten ---------- */
+
+    .uitgelicht-title {
+        padding: 0 18px;
+    }
+
+    .uitgelicht {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(26px, 6vw, 32px);
+        height: auto;
+        padding: 0 12px;
+    }
+
+    .uitgelicht-gap {
+        display: none;
+    }
+
+    .uitgelicht-left,
+    .uitgelicht-right {
+        width: 100%;
+        height: clamp(240px, 60vw, 300px);
+        transition: transform 0.4s ease;
+    }
+
+    .uitgelicht-left:active,
+    .uitgelicht-right:active {
+        transform: scale(0.99);
+    }
+
+    .uitgelicht-img1,
+    .uitgelicht-img2 {
+        width: 94%;
+    }
+
+    .text1-uitgelicht,
+    .text2-uitgelicht {
+        top: 17%;
+    }
+
+
+    /* ---------- CTA sectie ---------- */
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        min-width: 0;
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 22px;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        border-left: 1px solid rgba(201, 169, 110, 0.5);
+        border-right: 1px solid rgba(201, 169, 110, 0.5);
+    }
+
+    .cta-knoppen::before,
+    .cta-knoppen::after {
+        display: none;
+    }
+
+
+    /* ---------- MODAL / GRID ---------- */
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0;
+    }
+}
+
+
+/* =========================================================
+   KLEINE TELEFOON (<= 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+
+    .links,
+    .rechts {
+        aspect-ratio: 4 / 5;
+    }
+
+    .project-text,
+    .project-text2 {
+        padding: 14px 10px;
+    }
+
+    .project-text h2::after,
+    .project-text2 h2::after {
+        width: 26px;
+        margin: 6px auto 2px;
+    }
+
+    .text1-uitgelicht,
+    .text2-uitgelicht {
+        top: 16%;
+    }
+
+    .carousel-slide {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* =========================================================
+   ZEER SMAL (<= 360px)
+   Laatste verfijning zodat tekst op piepkleine schermen
+   netjes blijft en niets uit het tekstvak loopt.
+   ========================================================= */
+@media (max-width: 360px) {
+
+    .links,
+    .rechts {
+        aspect-ratio: 3 / 4;
+    }
+
+    .project-text h2,
+    .project-text2 h2 {
+        font-size: clamp(0.9rem, 6vw, 1.1rem);
+        letter-spacing: 0.01em;
+    }
+
+    .project-text p,
+    .project-text2 p {
+        font-size: 0.54rem;
+    }
+}
+
+/* =========================================================
+   ULTRA-WIDE (>= 1921px)
+   Op zeer brede schermen niet eindeloos meeschalen, maar de
+   compositie centreren en begrenzen zodat alles luxe en
+   verzorgd blijft. De clamp()-waardes hierboven zitten op deze
+   breedte al op hun maximum; hier verfijnen we de kaders.
+   ========================================================= */
+@media (min-width: 1921px) {
+
+    /* hoofd-grids gecentreerd en begrensd zodat tegels niet
+       overdreven breed worden op een 4K/ultrawide monitor */
+    .projecten,
+    .uitgelicht {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projecten {
+        height: 520px;
+    }
+
+    .uitgelicht {
+        height: 440px;
+    }
+
+    /* tekstvak blijft in verhouding; iets ruimere padding past
+       bij de grotere tegels */
+    .project-text,
+    .project-text2 {
+        padding: 36px 40px;
+    }
+
+    /* titels mogen op deze breedte iets groter ademen */
+    .project-text h2,
+    .project-text2 h2 {
+        font-size: 2rem;
+    }
+
+    .project-text p,
+    .project-text2 p {
+        font-size: 0.88rem;
+    }
+
+    .uitgelicht-title h2 {
+        font-size: 2.3rem;
+    }
+
+    .text1-uitgelicht,
+    .text2-uitgelicht {
+        font-size: 1rem;
+    }
+
+    /* CTA-blok en titel iets royaler, maar nog steeds rustig */
+    .cta-sectie {
+        max-width: 1180px;
+    }
+
+    .cta-sectie h2 {
+        font-size: 2.6rem;
+    }
+
+    .cta-sectie p {
+        font-size: 0.95rem;
+        max-width: 720px;
+    }
+
+    /* modal-content mag op ultrawide wat breder ademen */
+    .overlay-content,
+    .detail-content {
+        max-width: 1480px;
+    }
+
+    .carousel {
+        max-width: 1240px;
+    }
+}
+
+
+/* =========================================================
+   SUPER ULTRA-WIDE (>= 2560px)
+   Voor 5K / 32:9 monitoren: harde begrenzing zodat de pagina
+   als een gecentreerde kolom blijft ogen i.p.v. uitgesmeerd
+   over de volle breedte.
+   ========================================================= */
+@media (min-width: 2560px) {
+
+    .projecten,
+    .uitgelicht {
+        max-width: 1800px;
+    }
+
+    .projecten {
+        height: 600px;
+    }
+
+    .uitgelicht {
+        height: 500px;
+    }
+
+    .project-text h2,
+    .project-text2 h2 {
+        font-size: 2.3rem;
+    }
+
+    .overlay-content,
+    .detail-content {
+        max-width: 1700px;
+    }
+}

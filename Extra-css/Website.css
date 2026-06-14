@@ -1,0 +1,1662 @@
+/*INTRO CSS*/
+
+/*ALLEEN VAN INTRO 1*/
+.intro_1 {
+    height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--beige);
+}
+
+.intro-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hele lichte overlay: alleen onderaan een vleugje --darkblue
+   zodat de foto zachtjes overgaat in de rest van de pagina */
+.intro_1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(8, 8, 35, 0)     0%,
+        rgba(8, 8, 35, 0)    60%,
+        rgba(8, 8, 35, 0.4) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.intro-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 200px;
+}
+
+/* Hoofdtitel - rustig en elegant */
+.intro-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--offwhite);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+}
+
+/* Subtitel - cursief beige */
+.intro-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--beige);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+}
+
+.intro-text h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: var(--beige);
+    margin: 1.2rem auto 0;
+}
+
+/* Paragrafen - rustig leesbaar */
+.intro-text p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9rem;
+    color: var(--offwhite);
+    line-height: 1.9;
+    opacity: 0.8;
+    letter-spacing: 0.3px;
+}
+/*EINDE INTRO 1*/
+
+
+
+.intro_2 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+
+.intro2_part1,
+.intro2_part2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro_2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0.046875rem;
+    background: linear-gradient(
+        to bottom,
+        transparent 8%,
+        var(--beige) 30%,
+        var(--beige) 50%,
+        transparent 93%
+    );
+}
+
+/*BEGIN PART1*/
+
+
+/*BEGIN INTRO 2 - KOPSTUK*/
+.intro2-kopstuk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+}
+
+/* dit is voor de kleine tekst boven de titel (— ONZE EXPERTISE —) */
+.intro2-overline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--beige);
+    font-family: "Libre B", "serif";
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    margin-bottom: 1.5rem;
+}
+
+/* de streepjes links en rechts van de overline */
+.intro2-overline::before,
+.intro2-overline::after {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: var(--beige);
+}
+
+/* de grote titel "Twee disciplines, één visie" */
+.intro2-hoofdtitel {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: var(--offwhite);
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+/* het italic "één visie" in beige */
+.intro2-hoofdtitel em {
+    font-style: italic;
+    color: var(--beige);
+    font-weight: 300;
+}
+
+/*
+##############################
+EINDE INTRO 2 - KOPSTUK
+##############################
+*/
+
+
+/*
+##############################
+BEGIN INTRO 2 - TWEE KOLOMMEN
+##############################
+*/
+
+.intro_2 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding-bottom: 6rem;
+}
+
+.intro2_part1,
+.intro2_part2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+/* de verticale lijn tussen de twee kolommen */
+.intro_2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 6rem;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        transparent 8%,
+        var(--beige) 30%,
+        var(--beige) 70%,
+        transparent 93%
+    );
+    opacity: 0.5;
+}
+
+/* het nummer — 01 — / — 02 — boven de titel */
+.intro2-nummer {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    color: var(--beige);
+    margin-bottom: 0.5rem;
+}
+
+/* de titels "Maatwerk Meubels" / "Bouwprojecten" */
+.intro2-text1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.intro2-text1 h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--beige);
+}
+
+/* de foto-boxen */
+.intro2-img-box,
+.intro2-img-box2 {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(158, 140, 121, 0.25);
+    margin-bottom: 2rem;
+}
+
+.intro2-image,
+.intro2-image2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+/* de foto zoomt in als je er overheen gaat met de muis */
+.intro2-img-box:hover .intro2-image,
+.intro2-img-box2:hover .intro2-image2 {
+    transform: scale(1.08);
+}
+
+/* de beschrijvende tekst onder de foto */
+.intro2-text2,
+.intro2-text2-2 {
+    width: 85%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.intro2-text2 p,
+.intro2-text2-2 p {
+    font-family: "Libre B", "serif";
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--offwhite);
+    opacity: 0.75;
+}
+
+/* het linkje onderaan ("Bespreek jouw idee →") */
+.intro2-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: "Libre B", "serif";
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--beige);
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(158, 140, 121, 0.25);
+    transition: border-bottom 0.3s ease;
+}
+
+.intro2-link:hover {
+    border-bottom: 1px solid var(--beige);
+}
+
+/* de pijl schuift naar rechts bij hover */
+.intro2-link .pijl {
+    transition: transform 0.3s ease;
+}
+
+.intro2-link:hover .pijl {
+    transform: translateX(6px);
+}
+
+/*
+##############################
+EINDE INTRO 2 - TWEE KOLOMMEN
+##############################
+*/
+
+/*
+##############
+EINDE PART 1
+##############
+*/
+
+/*
+##############################
+BEGIN WHY US - KOPSTUK
+##############################
+*/
+
+.why-kopstuk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+}
+
+/* de kleine tekst boven de titel (— WAAROM KIEZEN VOOR ONS —) */
+.why-overline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--beige);
+    font-family: "Libre B", "serif";
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    margin-bottom: 1.5rem;
+}
+
+/* de streepjes links en rechts van de overline */
+.why-overline::before,
+.why-overline::after {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: var(--beige);
+}
+
+/* de grote titel "Ambacht dat zich laat zien" */
+.why-hoofdtitel {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: var(--offwhite);
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+/* het italic "laat zien" in beige */
+.why-hoofdtitel em {
+    font-style: italic;
+    color: var(--beige);
+    font-weight: 300;
+}
+
+/*
+##############################
+EINDE WHY US - KOPSTUK
+##############################
+*/
+
+
+/*
+##############################
+BEGIN WHY US - KAARTEN
+##############################
+*/
+
+.why-us {
+    display: flex;
+    gap: 2rem;
+    padding: 0 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* de losse kaart zelf (x3) */
+.why-kaart {
+    flex: 1;
+    padding: 3.5rem 2rem;
+    border: 1px solid rgba(158, 140, 121, 0.25);
+    background: rgba(14, 14, 44, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease, border 0.5s ease, background 0.5s ease;
+}
+
+/* als je met de muis over een kaart gaat: licht omhoog + beige rand */
+.why-kaart:hover {
+    transform: translateY(-6px);
+    border: 1px solid var(--beige);
+    background: rgba(14, 14, 44, 0.8);
+}
+
+/* het vakje om het icoon heen */
+.why-icon-box {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+}
+
+.why-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+/* het icoon wordt iets groter bij hover */
+.why-kaart:hover .why-icon {
+    transform: scale(1.08);
+}
+
+/* de titels op de kaarten */
+.why-kaart h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--offwhite);
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+}
+
+/* het beige streepje tussen titel en tekst */
+.why-lijn {
+    width: 40px;
+    height: 1px;
+    background: var(--beige);
+    margin-bottom: 1.2rem;
+}
+
+/* de beschrijving op de kaart */
+.why-kaart p {
+    font-family: "Libre B", "serif";
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--offwhite);
+    opacity: 0.75;
+}
+
+/*
+##############################
+EINDE WHY US - KAARTEN
+##############################
+*/
+
+
+/*
+##############################
+BEGIN WHY US - KNOP
+##############################
+*/
+
+.why-knop-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0 6rem;
+}
+
+.why-knop {
+    font-family: "Libre B", "serif";
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--beige);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--beige);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* bij hover word de knop beige met donkere tekst */
+.why-knop:hover {
+    background: var(--beige);
+    color: var(--darkblue);
+}
+
+/*
+##############################
+EINDE WHY US - KNOP
+##############################
+*/
+
+
+/*
+##############################
+BEGIN ONZE AANPAK - KOPSTUK
+##############################
+*/
+
+.aanpak-kopstuk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 5rem;
+}
+
+/* de kleine tekst boven de titel (— ONZE AANPAK —) */
+.aanpak-overline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--beige);
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    margin-bottom: 1.5rem;
+}
+
+/* de streepjes links en rechts van de overline */
+.aanpak-overline::before,
+.aanpak-overline::after {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: var(--beige);
+}
+
+/* de grote titel "Van idee tot oplevering" */
+.aanpak-hoofdtitel {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: var(--offwhite);
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+/* het italic "oplevering" in beige */
+.aanpak-hoofdtitel em {
+    font-style: italic;
+    color: var(--beige);
+    font-weight: 300;
+}
+
+/*
+##############################
+EINDE ONZE AANPAK - KOPSTUK
+##############################
+*/
+
+
+/*
+##############################
+BEGIN ONZE AANPAK - STAPPEN
+##############################
+*/
+
+.aanpak-stappen {
+    display: flex;
+    gap: 2.5rem;                /* ← ruimte tussen de stappen */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem 8rem;
+    position: relative;
+}
+
+/* de horizontale lijn die door alle cirkels heen loopt */
+.aanpak-stappen::before {
+    content: '';
+    position: absolute;
+    top: 2.2rem;          /* hoogte: midden van de cirkels */
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(158, 140, 121, 0.4),
+        rgba(158, 140, 121, 0.4),
+        transparent
+    );
+    z-index: 0;
+}
+
+/* elke losse stap (x4) */
+.stap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;            /* ← ademruimte binnen elke stap */
+}
+
+.stap h4 {
+    font-size: 20.8px;
+    margin-bottom: 0.8rem;      /* ← ruimte tussen titel en tekst */
+}
+
+.stap p {
+    max-width: 240px;           /* ← tekst blijft compact */
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.stap p, .stap h4 {
+    color: rgb(214, 204, 204);
+    font-family: "Libre B", serif;
+}
+
+/* de cirkel met het romeinse cijfer */
+.stap-cirkel {
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 1px solid var(--beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--darkblue);
+    color: var(--beige);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* bij hover: cirkel wordt beige met donkere tekst */
+.stap:hover .stap-cirkel {
+    background: var(--beige);
+    color: var(--darkblue);
+}
+
+.stap p , h4 {
+    color: rgb(214, 204, 204);
+    font-family: "Libre B", serif;
+}
+
+.stap h4 {
+    font-size: 20.8px;
+}
+
+
+/*
+##############################
+BEGIN CTA - LATEN WE KENNISMAKEN
+##############################
+*/
+
+.cta-blok {
+    border-top: 1px solid rgba(158, 140, 121, 0.25);
+    border-bottom: 1px solid rgba(158, 140, 121, 0.25);
+    padding: 8rem 2rem;
+    text-align: center;
+    margin: 6rem 0 0;
+}
+
+/* het kopstuk: overline + grote titel */
+.cta-kopstuk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+/* de kleine tekst boven de titel (— LATEN WE KENNISMAKEN —) */
+.cta-overline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--beige);
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    margin-bottom: 1.5rem;
+}
+
+/* de streepjes links en rechts van de overline */
+.cta-overline::before,
+.cta-overline::after {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: var(--beige);
+}
+
+/* de grote titel "Klaar voor jouw volgende project?" */
+.cta-hoofdtitel {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: var(--offwhite);
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+/* het italic "volgende project?" in beige */
+.cta-hoofdtitel em {
+    font-style: italic;
+    color: var(--beige);
+    font-weight: 300;
+}
+
+/* de tussentekst */
+.cta-tekst {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--offwhite);
+    opacity: 0.8;
+}
+
+/* de twee knoppen naast elkaar */
+.cta-knoppen {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* gedeelde stijl voor beide knoppen */
+.cta-knop-vol,
+.cta-knop-leeg {
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    text-decoration: none;
+    padding: 1.1rem 2.5rem;
+    border: 1px solid var(--beige);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* de gevulde beige knop */
+.cta-knop-vol {
+    background: var(--beige);
+    color: var(--darkblue);
+}
+
+.cta-knop-vol:hover {
+    background: transparent;
+    color: var(--beige);
+}
+
+/* de outline knop met telefoonnummer */
+.cta-knop-leeg {
+    background: transparent;
+    color: var(--offwhite);
+}
+
+.cta-knop-leeg:hover {
+    background: var(--beige);
+    color: var(--darkblue);
+}
+
+/*
+##############################
+EINDE CTA - LATEN WE KENNISMAKEN
+##############################
+*/
+
+/*
+Footer
+*/
+footer {
+  background: var(--darkblue);
+  color: var(--offwhite);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige);
+  letter-spacing: 0.5px;
+}
+
+footer p {
+  font-weight: 300;
+}
+
+footer p:last-child {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 0.6rem;
+}
+
+footer span {
+  color: var(--beige);
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  transition: color 0.3s ease;
+}
+
+footer span:hover {
+  color: #d4b896;
+  cursor: default;
+}
+
+footer .avdb-link {
+  color: var(--beige);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  transition: color 0.3s ease;
+}
+
+footer .avdb-link:hover {
+  color: var(--beige);
+  text-decoration: underline;
+}
+
+
+/*
+========================================================
+========================================================
+                    RESPONSIVE
+========================================================
+Default (desktop)        : alles wat hierboven staat
+Ultrawide                : ≥ 1920px
+Laptop / kleine desktop  : ≤ 1280px
+Tablet / iPad            : ≤ 1024px
+Telefoon                 : ≤ 768px
+Kleine telefoon          : ≤ 480px
+========================================================
+========================================================
+*/
+
+
+/*
+========================================================
+ULTRAWIDE  (≥ 1920px)
+hero is full-bleed (edge-to-edge), inner secties hebben
+max-widths zodat tekst leesbaar gecentreerd blijft
+========================================================
+*/
+@media (min-width: 1920px) {
+
+
+    /* HERO — full-bleed foto, gecentreerde tekst */
+
+    .navbar {
+        width: 100%;
+        max-width: none;
+    }
+    .intro_1 {
+        height: 1200px;
+    }
+
+    .intro-text {
+        max-width: 920px;
+    }
+
+    .intro-text h1 {
+        font-size: 3.2rem;
+    }
+
+    .intro-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro-text p {
+        font-size: 1.05rem;
+    }
+
+    /* KOPSTUKKEN — groter en luxer op ultrawide */
+    .intro2-kopstuk,
+    .why-kopstuk,
+    .aanpak-kopstuk {
+        padding: 10rem 2rem 5rem;
+    }
+
+    .intro2-hoofdtitel,
+    .why-hoofdtitel,
+    .aanpak-hoofdtitel,
+    .cta-hoofdtitel {
+        font-size: 3.8rem;
+    }
+
+    /* INTRO 2 — twee kolommen met ruime breedte */
+    .intro_2 {
+        max-width: 1900px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .intro2_part1,
+    .intro2_part2 {
+        padding: 0 4rem;
+    }
+
+    .intro2-img-box,
+    .intro2-img-box2 {
+        height: 580px;
+    }
+
+    .intro2-text2 p,
+    .intro2-text2-2 p {
+        font-size: 1.05rem;
+    }
+
+    /* WHY US — kaarten met meer ademruimte */
+    .why-us {
+        max-width: 1700px;
+        gap: 2.5rem;
+    }
+
+    .why-kaart {
+        padding: 4rem 2.5rem;
+    }
+
+    .why-kaart h3 {
+        font-size: 1.65rem;
+    }
+
+    /* AANPAK — stappen met meer ruimte tussen */
+    .aanpak-stappen {
+        max-width: 1700px;
+        padding: 0 4rem 8rem;
+    }
+
+    /* CTA — full-width achtergrond met gecentreerde inhoud */
+    .cta-blok {
+        padding: 10rem 2rem;
+    }
+
+    .cta-tekst {
+        max-width: 760px;
+        font-size: 1.1rem;
+    }
+
+    /* footer ook iets ruimer */
+    footer {
+        padding: 2.5rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+
+/*
+========================================================
+LAPTOP / KLEINE DESKTOP  (≤ 1280px)
+kleine aanpassingen om alles wat compacter te zetten
+========================================================
+*/
+@media (max-width: 1280px) {
+
+    .intro_2 {
+        padding-bottom: 4rem;
+    }
+
+    .intro2_part1,
+    .intro2_part2 {
+        padding: 0 2rem;
+    }
+
+    .intro2-img-box,
+    .intro2-img-box2 {
+        height: 360px;
+    }
+
+    .intro2-hoofdtitel,
+    .why-hoofdtitel,
+    .aanpak-hoofdtitel,
+    .cta-hoofdtitel {
+        font-size: 2.6rem;
+    }
+
+    .why-us {
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    .aanpak-stappen {
+        gap: 1.5rem;
+        padding: 0 2rem 6rem;
+    }
+}
+
+
+/*
+========================================================
+TABLET / IPAD  (≤ 1024px)
+twee kolommen blijven, maar krapper. Why-us blijft
+3 kaarten naast elkaar, aanpak ook 4 stappen
+========================================================
+*/
+@media (max-width: 1024px) {
+
+    /* Hero / intro 1 */
+    .intro_1 {
+        height: 600px;
+    }
+
+    .intro-text {
+        margin-bottom: 120px;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text h2 {
+        font-size: 1.15rem;
+    }
+
+    /* Intro 2 — kopstuk */
+    .intro2-kopstuk,
+    .why-kopstuk,
+    .aanpak-kopstuk {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .intro2-hoofdtitel,
+    .why-hoofdtitel,
+    .aanpak-hoofdtitel,
+    .cta-hoofdtitel {
+        font-size: 2.2rem;
+    }
+
+    /* Intro 2 — kolommen */
+    .intro_2 {
+        height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .intro2_part1,
+    .intro2_part2 {
+        padding: 0 1.5rem;
+    }
+
+    .intro2-text1 h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro2-img-box,
+    .intro2-img-box2 {
+        height: 300px;
+    }
+
+    .intro2-text2 p,
+    .intro2-text2-2 p {
+        font-size: 0.92rem;
+    }
+
+    /* Why us — kaarten */
+    .why-us {
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .why-kaart {
+        padding: 2.5rem 1.2rem;
+    }
+
+    .why-kaart h3 {
+        font-size: 1.25rem;
+    }
+
+    .why-icon-box {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* Aanpak */
+    .aanpak-stappen {
+        gap: 1rem;
+        padding: 0 1.5rem 5rem;
+    }
+
+    .stap-cirkel {
+        width: 3.6rem;
+        height: 3.6rem;
+        font-size: 1.05rem;
+    }
+
+    .stap h4 {
+        font-size: 18px;
+    }
+
+    /* lijn iets korter laten lopen */
+    .aanpak-stappen::before {
+        left: 12%;
+        right: 12%;
+    }
+
+    /* CTA */
+    .cta-blok {
+        padding: 6rem 1.5rem;
+        margin-top: 4rem;
+    }
+}
+
+
+/*
+========================================================
+TELEFOON  (≤ 768px)
+alles wordt één kolom. Verticale lijnen vervallen
+of worden horizontaal/verticaal omgezet.
+========================================================
+*/
+@media (max-width: 768px) {
+
+    /* Hero / intro 1 */
+    .intro_1 {
+        height: 520px;
+    }
+
+    .intro-text {
+        margin-bottom: 60px;
+        width: 92%;
+    }
+
+    .intro-text h1 {
+        font-size: 1.7rem;
+        line-height: 1.25;
+    }
+
+    .intro-text h2 {
+        font-size: 1.05rem;
+    }
+
+    .intro-text p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    /* gradient onderaan iets sterker zodat de tekst goed leesbaar blijft */
+    .intro_1::after {
+        background: linear-gradient(
+            to bottom,
+            rgba(8, 8, 35, 0)   0%,
+            rgba(8, 8, 35, 0.1) 40%,
+            rgba(8, 8, 35, 0.7) 100%
+        );
+    }
+
+    /* Kopstukken */
+    .intro2-kopstuk,
+    .why-kopstuk,
+    .aanpak-kopstuk {
+        padding: 5rem 1.2rem 2.5rem;
+    }
+
+    .intro2-overline,
+    .why-overline,
+    .aanpak-overline,
+    .cta-overline {
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
+    }
+
+    .intro2-overline::before,
+    .intro2-overline::after,
+    .why-overline::before,
+    .why-overline::after,
+    .aanpak-overline::before,
+    .aanpak-overline::after,
+    .cta-overline::before,
+    .cta-overline::after {
+        width: 1.5rem;
+    }
+
+    .intro2-hoofdtitel,
+    .why-hoofdtitel,
+    .aanpak-hoofdtitel,
+    .cta-hoofdtitel {
+        font-size: 1.85rem;
+        line-height: 1.25;
+    }
+
+    /* INTRO 2 — twee kolommen worden één kolom */
+    .intro_2 {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 2rem;
+        gap: 4rem;
+    }
+
+    /* verticale lijn in het midden vervalt op mobiel */
+    .intro_2::after {
+        display: none;
+    }
+
+    .intro2_part1,
+    .intro2_part2 {
+        padding: 0 1.2rem;
+        width: 100%;
+    }
+
+    .intro2-text1 h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro2-img-box,
+    .intro2-img-box2 {
+        height: 260px;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro2-text2,
+    .intro2-text2-2 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro2-text2 p,
+    .intro2-text2-2 p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .intro2-link {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+    }
+
+    /* WHY US — 3 kaarten worden 1 kolom */
+    .why-us {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 0 1.2rem;
+    }
+
+    .why-kaart {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .why-kaart h3 {
+        font-size: 1.3rem;
+    }
+
+    .why-kaart h3 br {
+        display: none;     /* op mobiel mag de titel gewoon doorlopen */
+    }
+
+    .why-knop-wrap {
+        padding: 3rem 1.2rem 4rem;
+    }
+
+    .why-knop {
+        font-size: 0.75rem;
+        padding: 0.9rem 2rem;
+        letter-spacing: 0.25em;
+    }
+
+    /* AANPAK — 4 stappen worden verticale lijst */
+    .aanpak-stappen {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 0 1.5rem 5rem;
+    }
+
+    /* horizontale lijn vervalt op mobiel */
+    .aanpak-stappen::before {
+        display: none;
+    }
+
+    .stap {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1.2rem;
+        padding: 0;
+    }
+
+    .stap-cirkel {
+        flex-shrink: 0;
+        margin-bottom: 0;
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 1rem;
+    }
+
+    .stap h4 {
+        font-size: 17px;
+        margin-bottom: 0.4rem;
+    }
+
+    .stap p {
+        max-width: none;
+        font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta-blok {
+        padding: 5rem 1.2rem;
+        margin-top: 3rem;
+    }
+
+    .cta-tekst {
+        font-size: 0.92rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-knoppen {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    .cta-knop-vol,
+    .cta-knop-leeg {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 1rem 1.5rem;
+        letter-spacing: 0.25em;
+    }
+}
+
+
+/*
+========================================================
+KLEINE TELEFOON  (≤ 480px)
+laatste fijnafstellingen voor de kleinste schermen
+========================================================
+*/
+@media (max-width: 480px) {
+
+    .intro_1 {
+        height: 460px;
+    }
+
+    .intro-text h1 {
+        font-size: 1.45rem;
+    }
+
+    .intro-text h2 {
+        font-size: 0.95rem;
+    }
+
+    .intro2-hoofdtitel,
+    .why-hoofdtitel,
+    .aanpak-hoofdtitel,
+    .cta-hoofdtitel {
+        font-size: 1.6rem;
+    }
+
+    .intro2-text1 h2 {
+        font-size: 1.4rem;
+    }
+
+    .intro2-img-box,
+    .intro2-img-box2 {
+        height: 220px;
+    }
+
+    .why-kaart {
+        padding: 2rem 1.2rem;
+    }
+
+    .why-kaart h3 {
+        font-size: 1.2rem;
+    }
+
+    .stap-cirkel {
+        width: 3rem;
+        height: 3rem;
+        font-size: 0.95rem;
+    }
+
+    .cta-blok {
+        padding: 4rem 1rem;
+    }
+
+    .cta-tekst {
+        font-size: 0.88rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 1.5rem 1rem;
+    }
+
+    footer p:last-child {
+        font-size: 0.72rem;
+    }
+}
+
+
+/*
+========================================================
+PARALLAX UITSCHAKELEN OP TELEFOON / TABLET
+de JS zet inline transforms op .intro-foto en .intro-text.
+op kleine schermen werkt dat niet lekker, dus override.
+========================================================
+*/
+@media (max-width: 1024px) {
+    .intro-foto {
+        transform: none !important;
+    }
+    .intro-text {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/*
+========================================================
+========================================================
+LUXE UPGRADE — ONZE AANPAK SECTIE
+italic Romeinse cijfers in Playfair, dubbele ring op
+de cirkels, Playfair-titels en op mobiel een
+verticale tijdlijn die de stappen met elkaar verbindt
+========================================================
+========================================================
+*/
+
+/* --- de horizontale tijdlijn op desktop iets verfijnen --- */
+.aanpak-stappen::before {
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(158, 140, 121, 0.35) 12%,
+        rgba(158, 140, 121, 0.35) 88%,
+        transparent
+    );
+}
+
+/* --- Cirkels: italic Romeinse cijfers + dubbele ring + zachte glow --- */
+.stap-cirkel {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.45rem;
+    letter-spacing: 0.05em;
+    width: 4.6rem;
+    height: 4.6rem;
+    /* dubbele ring: smalle binnenrand voor diepte */
+    box-shadow:
+        inset 0 0 0 1px rgba(8, 8, 35, 1),
+        inset 0 0 0 2px rgba(158, 140, 121, 0.22);
+    /* zachte beige schijn vanuit het midden */
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(158, 140, 121, 0.05) 0%,
+            var(--darkblue) 70%
+        );
+    transition:
+        background 0.5s ease,
+        color 0.5s ease,
+        box-shadow 0.5s ease,
+        transform 0.5s ease;
+}
+
+/* hover: cirkel kleurt beige met een zachte buitengloed */
+.stap:hover .stap-cirkel {
+    background: var(--beige);
+    color: var(--darkblue);
+    transform: scale(1.04);
+    box-shadow:
+        inset 0 0 0 1px var(--beige),
+        inset 0 0 0 2px rgba(8, 8, 35, 0.25),
+        0 0 28px rgba(158, 140, 121, 0.22);
+}
+
+/* --- Titels in Playfair voor consistentie met de rest van de site --- */
+.stap h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    letter-spacing: 0.5px;
+    color: var(--offwhite);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+/* --- klein beige streepje onder de titel, alleen op desktop --- */
+.stap h4::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--beige);
+    opacity: 0.5;
+    margin: 0.7rem auto 0;
+    transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+.stap:hover h4::after {
+    width: 44px;
+    opacity: 1;
+}
+
+/* --- Beschrijving fijner: meer lucht, iets minder hard --- */
+.stap p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--offwhite);
+    opacity: 0.72;
+    letter-spacing: 0.2px;
+    max-width: 240px;
+}
+
+
+/*
+========================================================
+LUXE UPGRADE — TABLET tweaks
+========================================================
+*/
+@media (max-width: 1024px) {
+    .stap-cirkel {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.25rem;
+    }
+
+    .stap h4 {
+        font-size: 1.25rem;
+    }
+}
+
+
+/*
+========================================================
+LUXE UPGRADE — MOBIEL
+verticale tijdlijn tussen de cirkels, en het streepje
+onder de titel verschuift naar links (linksuitgelijnd)
+========================================================
+*/
+@media (max-width: 768px) {
+
+    .aanpak-stappen {
+        position: relative;
+        gap: 2.8rem;
+    }
+
+    /* nieuwe verticale lijn die door alle cirkels heen loopt */
+    .aanpak-stappen::after {
+        content: '';
+        position: absolute;
+        /* 1.5rem = container padding-left, 1.7rem = halve cirkel-breedte (3.4rem / 2) */
+        left: calc(1.5rem + 1.7rem);
+        top: 1.7rem;
+        bottom: 5rem;             /* matcht de container padding-bottom */
+        width: 1px;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(158, 140, 121, 0.4) 6%,
+            rgba(158, 140, 121, 0.4) 94%,
+            transparent 100%
+        );
+        z-index: 0;
+    }
+
+    /* cirkels boven de lijn — grid: kolom 1 = cirkel, kolom 2 = titel + tekst gestapeld */
+    .stap {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1.4rem;
+        row-gap: 0.5rem;
+        align-items: start;
+    }
+
+    .stap-cirkel {
+        grid-row: 1 / span 2;     /* cirkel spant titel + beschrijving */
+        align-self: start;
+        flex-shrink: 0;
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 1.15rem;
+        /* opaque zodat de lijn er niet doorheen schemert */
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(158, 140, 121, 0.05) 0%,
+                var(--darkblue) 70%
+            );
+        margin-bottom: 0;
+    }
+
+    .stap h4 {
+        grid-column: 2;
+        align-self: center;       /* lijnt mooi uit met midden van cirkel */
+        font-size: 1.2rem;
+        text-align: left;
+        margin: 0;
+    }
+
+    .stap p {
+        grid-column: 2;
+        max-width: none;
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    /* op mobiel staat het streepje onder de titel links uitgelijnd */
+    .stap h4::after {
+        margin: 0.6rem 0 0;
+        width: 24px;
+    }
+
+    .stap:hover h4::after {
+        width: 36px;
+    }
+}
+
+
+/*
+========================================================
+LUXE UPGRADE — KLEINE TELEFOON
+========================================================
+*/
+@media (max-width: 480px) {
+    .aanpak-stappen::after {
+        /* op kleinere telefoons heeft de container minder padding,
+           dus de lijn iets verschuiven */
+        left: calc(1.5rem + 1.5rem);
+    }
+
+    .stap-cirkel {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.05rem;
+    }
+
+    .stap h4 {
+        font-size: 1.1rem;
+    }
+}
