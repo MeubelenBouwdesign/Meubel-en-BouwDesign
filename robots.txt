@@ -1,0 +1,5 @@
+# robots.txt voor Meubel & Bouw Design
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mbdesigner.nl/sitemap.xml
