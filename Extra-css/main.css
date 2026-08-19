@@ -11,9 +11,109 @@
 }
 
 
+
+/*
+====================================================
+ACHTERGROND — gevouwen vlakken
+
+Drie panelen van hetzelfde blauw, elk een fractie
+anders van toon, gescheiden door twee schuine vouwen.
+Het middelste paneel is letterlijk var(--darkblue).
+
+Vervang hiermee het ACHTERGROND-blok in main.css
+(alles vanaf de comment tot aan /*BEGIN NAVBAR LINKS).
+
+Let op: dit blok gaat ervan uit dat --darkblue en
+--beige al in je :root staan.
+====================================================
+*/
+:root {
+    /* Drie panelen, alle drie afgeleid van --darkblue */
+    --vlak-1: rgb(15, 15, 48);        /* linksboven, iets opgetild */
+    --vlak-2: var(--darkblue);        /* midden, ongewijzigd       */
+    --vlak-3: rgb(4, 4, 20);          /* rechtsonder, weggezakt    */
+
+    /* hoek waaronder het vlak gevouwen is */
+    --vouw-hoek: 108deg;
+
+    /* de naad op de vouw.
+       0 = geen lijn · 0.05 = zoals nu · 0.12 = duidelijk zichtbaar */
+    --vouw-lijn: 0.05;
+
+    /* korrel tegen kleurbanden.
+       0 = uit · 0.18 = zoals nu · 0.35 = zichtbaar textiel */
+    --bg-korrel: 0.18;
+}
+
+html {
+    background-color: var(--darkblue);
+}
+
 body {
     background-color: var(--darkblue);
+
+    /* De eerst genoemde laag ligt bovenop. */
+    background-image:
+        /* de naden — twee haarlijnen, precies op de vouwen */
+        linear-gradient(
+            var(--vouw-hoek),
+            rgba(158, 140, 121, 0) 30.9%,
+            rgba(158, 140, 121, var(--vouw-lijn)) 31%,
+            rgba(158, 140, 121, 0) 31.1%,
+            rgba(158, 140, 121, 0) 64.9%,
+            rgba(158, 140, 121, var(--vouw-lijn)) 65%,
+            rgba(158, 140, 121, 0) 65.1%
+        ),
+        /* de panelen zelf */
+        linear-gradient(
+            var(--vouw-hoek),
+            var(--vlak-1) 0%,
+            var(--vlak-1) 28%,
+            var(--vlak-2) 34%,
+            var(--vlak-2) 62%,
+            var(--vlak-3) 68%,
+            var(--vlak-3) 100%
+        );
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 100vh;
     margin-bottom: 30px;
+}
+
+/* Korrel — breekt kleurbanden op de overgangen */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    opacity: var(--bg-korrel);
+    mix-blend-mode: overlay;
+
+    background-size: 200px 200px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* Onder de containerbreedte raken de lijnen de schermrand.
+   Daar zijn het geen kaderlijnen meer maar een rand om het
+   scherm — dus uit. */
+@media (max-width: 1320px) {
+    :root {
+        --kaderlijn: 0;
+    }
+}
+
+/* Op telefoon is 55vh te veel verloop op weinig hoogte. */
+@media (max-width: 768px) {
+    :root {
+        --lift-hoogte: 40vh;
+        --top-lift: rgb(12, 12, 41);
+    }
 }
 
 
@@ -371,7 +471,7 @@ RESPONSIVE — KLEINE TELEFOON (≤ 480px)
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: #07091a;
+  background: var(--darkblue);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
